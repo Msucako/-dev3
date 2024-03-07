@@ -1,0 +1,69 @@
+import discord
+from discord.ext import commands
+
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+#İŞLEMLER
+@bot.command()
+async def bölme(ctx, s1=5 , s2=10):
+    await ctx.send(s1 / s2)
+
+@bot.command()
+async def çarpma(ctx, s1=5 , s2=10):
+    await ctx.send(s1 * s2)
+
+@bot.command()
+async def toplama(ctx, s1=5 , s2=10):
+    await ctx.send(s1 + s2)
+
+@bot.command()
+async def çıkartma(ctx, s1=5 , s2=10):
+    await ctx.send(s1 - s2)
+
+#KARAKTERLER
+Aatrox={"Adalet ışığı Aatrox":"875","Meka Aatrox":"1350","Denizlerin avcsı Aatrox":"750","Kanlı ay Aatrox":"1350","Uzay seriveni Aatrox":"1350"}
+Ahri={"Hanedan Ahri":"975","Geceyarısı Ahri":"750","Tilki ateşi Ahri":"975","Popstar Ahri":"975","Okullu Ahri":"975","Arcade Ahri":"1350","Yıldız muhafızı Ahri":"1820","KDA Ahri":"1350","Ağaç ata Ahri":"1350"}
+Akali={"Hemşire Akali":"975","Kanlı Ay Akali":"975","Gümüşdiş Akali":"975"}
+Kayn={"Uzay serüveni":"1350","Buzul ay":"1350","Heart steal":"1820","Ruh avcısı":"975","Gecenin tırpanı":"1350"}
+
+
+@bot.command()
+async def fiyat(ctx,champions):
+    if champions.capitalize()==Aatrox:
+        for i,j in Aatrox.items():
+            print(type(Aatrox))
+            await ctx.send(f"kostüm:{i} fiyatı:{j}")
+            
+    if champions.capitalize()==Ahri:
+        for i,j in Ahri.items():
+            print(type(Ahri))
+            await ctx.send(f"kostüm:{i} fiyatı:{j}")
+
+    if champions.capitalize()==Akali:
+        for i,j in Akali.items():
+            print(type(Akali))
+            await ctx.send(f"kostüm:{i} fiyatı:{j}")
+    
+    if champions.capitalize()==Kayn:
+        for i,j in Kayn.items():
+            print(type(Kayn))
+            await ctx.send(f"kostüm:{i} fiyatı:{j}")
+
+
+    
+    
+
+
+
+
+
+
+bot.run("MTIwNTU4MTYyNjgzMTE0NzEwOA.GBYUdr.pHfoN-XrEWx7a1S0nDyvXZAVz7ldoiS8CIHD5M")
