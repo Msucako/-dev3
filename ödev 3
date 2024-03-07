@@ -66,4 +66,4 @@ async def fiyat(ctx,champions):
 
 
 
-bot.run("MTIwNTU4MTYyNjgzMTE0NzEwOA.GBYUdr.pHfoN-XrEWx7a1S0nDyvXZAVz7ldoiS8CIHD5M")
+bot.run("")
